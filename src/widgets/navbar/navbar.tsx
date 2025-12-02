@@ -23,14 +23,14 @@ export function Navbar() {
 
     return (
         <div className="mb-12 grid grid-cols-[1fr_auto]">
-            <p className="font-medium">EDVIN HÖGMAN</p>
+            <p className="font-semibold">EDVIN HÖGMAN</p>
 
             {/* (desktop) navbar links */}
             <div className="hidden sm:block">
                 <div className="flex gap-8">{createNavLinks()}</div>
             </div>
 
-            {/* (mobile) collapsed menu */}
+            {/* (mobile) expandable menu */}
             <div className="block sm:hidden">
                 <div className="relative">
                     <Icon
@@ -39,7 +39,7 @@ export function Navbar() {
                         onClick={() => setActive(!active)}
                     />
                     {active && (
-                        <div className="absolute right-0 z-10 mt-1 rounded bg-zinc-900 p-2">
+                        <div className="absolute right-0 z-10 mt-1 bg-zinc-900 p-2.5">
                             {createNavLinks()}
                         </div>
                     )}

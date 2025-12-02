@@ -11,7 +11,7 @@ export function NavbarLink({ label, path, selected }: NavbarLinkProps) {
     return (
         <div>
             <Link
-                className={twMerge(selected && "text-yellow-500")}
+                className={twMerge(selected && "text-yellow-600")}
                 href={path}
             >
                 {label}
