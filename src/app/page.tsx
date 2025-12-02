@@ -9,7 +9,7 @@ export default function Home() {
         <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">
             {cards?.map((card, i) => (
                 <PortfolioCard
-                    key={`card-${i}`}
+                    key={`card-${card.title}-${i}`}
                     title={card.title}
                     description={card.description}
                     thumbnailURL={card.thumbnailURL}

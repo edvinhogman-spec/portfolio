@@ -1,3 +1,7 @@
 export default function Page() {
-    return <p>Hejsan!</p>
+    return (
+        <div>
+            <p>Hejsan!</p>
+        </div>
+    )
 }

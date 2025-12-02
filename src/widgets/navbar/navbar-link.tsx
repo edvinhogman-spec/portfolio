@@ -1,41 +1,21 @@
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 
-interface NavbarLink {
+interface NavbarLinkProps {
     label: string
     path: string
-    currentPathname: string
+    selected: boolean
 }
 
-const navbarLinkStyles = {
-    default: {
-        className: "",
-    },
-    selected: {
-        className: "font-medium",
-    },
-}
-
-export function NavbarLink({ label, path, currentPathname }: NavbarLink) {
-    const isSelectedPage = path === currentPathname
-
+export function NavbarLink({ label, path, selected }: NavbarLinkProps) {
     return (
         <div>
             <Link
-                className={twMerge(
-                    navbarLinkStyles.default.className,
-                    isSelectedPage
-                        ? navbarLinkStyles.selected.className
-                        : undefined,
-                )}
+                className={twMerge(selected && "text-yellow-500")}
                 href={path}
             >
                 {label}
             </Link>
-
-            {isSelectedPage && (
-                <div className="h-0.5 w-1/2 justify-self-center bg-yellow-500" />
-            )}
         </div>
     )
 }

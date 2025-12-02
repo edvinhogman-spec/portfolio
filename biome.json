@@ -24,8 +24,10 @@
         "rules": {
             "recommended": true,
             "suspicious": {
-                "noUnknownAtRules": "off",
-                "noArrayIndexKey": "off"
+                "noUnknownAtRules": "off"
+            },
+            "style": {
+                "noNonNullAssertion": "off"
             },
             "correctness": {
                 "noUnusedImports": {

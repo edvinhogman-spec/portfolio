@@ -6,7 +6,7 @@ export function formatPathnameToTitle(pathname: string): string {
     }
 
     const segments = cleanPath.split("/")
-    const lastSegment = segments[segments.length - 1]
+    const lastSegment = segments.at(-1)!
 
     const formatted = lastSegment
         .replace(/-/g, " ")

@@ -1,11 +1,11 @@
-import fs from "node:fs"
-import path from "node:path"
+import { readFileSync } from "node:fs"
+import { join } from "node:path"
 
 export function readPublicFileJSON<T>(relativePath: string): T | null {
     try {
         const root = process.cwd()
-        const filePath = path.join(root, "public", relativePath)
-        const fileContent = fs.readFileSync(filePath, "utf8")
+        const filePath = join(root, "public", relativePath)
+        const fileContent = readFileSync(filePath, "utf-8")
         const data = JSON.parse(fileContent) as T
         return data
     } catch (error) {
