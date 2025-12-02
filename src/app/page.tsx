@@ -6,13 +6,13 @@ export default function Home() {
     const cards = readPublicFileJSON<PortfolioCardStruct[]>("portfolio.json")
 
     return (
-        <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-4">
+        <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-5">
             {cards?.map((card, i) => (
                 <PortfolioCard
                     key={`card-${card.title}-${i}`}
                     title={card.title}
-                    description={card.description}
                     thumbnailURL={card.thumbnailURL}
+                    tags={card.tags}
                 />
             ))}
         </div>

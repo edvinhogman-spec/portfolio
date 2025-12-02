@@ -3,23 +3,52 @@ import Image from "next/image"
 interface PortfolioCardProps {
     title: string
     thumbnailURL: string
-    description: string
+    tags: string[]
 }
+
+// TODO:
+// lägg till ett sätt att ange en färg för olika tags, kanske jag har en lookup map
+// med typ:
+//      - typescript: blå
+//      - spel: grön
+//      - övrigt: grå
 
 export function PortfolioCard({
     title,
-    description,
     thumbnailURL,
+    tags,
 }: PortfolioCardProps) {
     return (
-        <div className="border-[1.5] border-yellow-700">
-            <div className="flex items-start justify-between gap-2 p-4">
-                <div>
-                    <p className="mb-0.5 font-medium text-lg">{title}</p>
-                    <p className="text-sm">{description}</p>
+        <div className="group">
+            <div className="flex h-full flex-col overflow-hidden rounded-xl border border-white/5 bg-zinc-800/20 shadow-lg transition-all duration-300">
+                <div className="relative aspect-square overflow-hidden">
+                    <Image
+                        className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        alt="Thumbnail"
+                        src={thumbnailURL}
+                        fill
+                    />
+
+                    <div className="absolute inset-0 flex items-center justify-center border-6 border-white/10 opacity-80 transition-opacity group-hover:opacity-100"></div>
+
+                    {/* tag area */}
+                    <div className="absolute top-4 right-4 left-4 flex select-none flex-wrap gap-1.5">
+                        {tags.map((tag) => (
+                            <div
+                                key={tag}
+                                className="rounded-2xl border border-white/5 bg-yellow-800/90 p-2 px-3 text-white text-xs capitalize backdrop-blur-sm"
+                            >
+                                {tag}
+                            </div>
+                        ))}
+                    </div>
                 </div>
-                <div className="relative aspect-square h-20">
-                    <Image src={thumbnailURL} alt="Thumbnail" fill />
+
+                {/* text area */}
+                <div className="flex grow flex-col p-4">
+                    <p className="text-wrap text-center text-gray-400 text-xs">
+                        {title}
+                    </p>
                 </div>
             </div>
         </div>
