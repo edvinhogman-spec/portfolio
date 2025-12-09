@@ -32,7 +32,7 @@ export function Navbar() {
     }
 
     return (
-        <div className="mb-12 grid grid-cols-[1fr_auto]">
+        <div className="mb-12 grid grid-cols-[1fr_auto] items-center">
             <p className="font-semibold">EDVIN HÖGMAN</p>
 
             {/* (desktop) navbar links */}
