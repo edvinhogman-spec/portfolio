@@ -1,6 +1,6 @@
 import { PortfolioCard } from "@/components/portfolio-card"
 import type { PortfolioCardStruct } from "@/types/structs"
-import { readPublicFileJSON } from "@/utils/read-public-file-json"
+import { readPublicFileJSON } from "@/utils/functions/read-public-file-json"
 
 export default function Home() {
     const cards = readPublicFileJSON<PortfolioCardStruct[]>("portfolio.json")
@@ -10,9 +10,9 @@ export default function Home() {
             {cards?.map((card, i) => (
                 <PortfolioCard
                     key={`card-${card.title}-${i}`}
-                    title={card.title}
                     thumbnailURL={card.thumbnailURL}
-                    tags={card.tags}
+                    linkURL={card.linkURL}
+                    title={card.title}
                 />
             ))}
         </div>

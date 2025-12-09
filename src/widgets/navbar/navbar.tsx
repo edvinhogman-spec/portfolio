@@ -1,22 +1,32 @@
 import { usePathname } from "next/navigation"
 import { useState } from "react"
 import { Icon } from "@/components/icon"
-import { formatPathnameToTitle } from "@/utils/format-pathname-to-title"
+import { formatPathnameToTitle } from "@/utils/functions/format-pathname-to-title"
 import { NavbarLink } from "./navbar-link"
 
-const NAV_LINKS = ["/", "/about"]
+const NAV_LINKS = [
+    {
+        path: "/",
+        icon: "portfolio",
+    },
+    {
+        path: "/about",
+        icon: "info",
+    },
+]
 
 export function Navbar() {
     const [active, setActive] = useState(false)
     const currpath = usePathname()
 
     const createNavLinks = () => {
-        return Object.values(NAV_LINKS).map((path) => (
+        return Object.values(NAV_LINKS).map((link) => (
             <NavbarLink
-                key={`nav-${path}`}
-                selected={currpath === path}
-                label={formatPathnameToTitle(path)}
-                path={path}
+                key={`nav-${link.path}`}
+                selected={currpath === link.path}
+                label={formatPathnameToTitle(link.path)}
+                path={link.path}
+                icon={link.icon}
             />
         ))
     }

@@ -1,17 +1,17 @@
 [
     {
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "thumbnailURL": "https://i.imgur.com/kTR2maA.png",
-        "tags": ["Portfolio"]
-    },
-    {
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-        "thumbnailURL": "https://i.imgur.com/Knn07rd.jpeg",
-        "tags": ["Portfolio"]
-    },
-    {
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
         "thumbnailURL": "https://i.imgur.com/VZDCsXt.jpeg",
-        "tags": ["Portfolio"]
+        "linkURL": "",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+    {
+        "thumbnailURL": "https://i.imgur.com/VZDCsXt.jpeg",
+        "linkURL": "",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    },
+    {
+        "thumbnailURL": "https://i.imgur.com/VZDCsXt.jpeg",
+        "linkURL": "",
+        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
     }
 ]
