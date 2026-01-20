@@ -3,5 +3,5 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.biome": "explicit"
     },
-    "tailwindCSS.classFunctions": ["tailwindUtils.className"]
+    "tailwindCSS.classFunctions": ["twCn"]
 }

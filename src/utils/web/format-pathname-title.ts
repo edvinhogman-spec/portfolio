@@ -1,5 +1,5 @@
 // Använde ChatGPT för att formattera om fula strängar till titlar med hjälp av regex
-export function formatPathnameToTitle(pathname: string): string {
+export function formatPathnameTitle(pathname: string): string {
     const cleanPath = pathname.split(/[?#]/)[0].replace(/^\/|\/$/g, "")
     if (cleanPath === "") {
         return "Portfolio"

@@ -1,6 +1,6 @@
-import { PortfolioCard } from "@/components/portfolio-card"
-import type { PortfolioCardStruct } from "@/types/structs"
-import { readPublicFileJSON } from "@/utils/functions/read-public-file-json"
+import { PortfolioCard } from "@/features/portfolio/components/portfolio-card"
+import type { PortfolioCardStruct } from "@/features/portfolio/types"
+import { readPublicFileJSON } from "@/utils/web"
 
 export default function Home() {
     const cards = readPublicFileJSON<PortfolioCardStruct[]>("portfolio.json")

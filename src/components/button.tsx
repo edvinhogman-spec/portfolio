@@ -1,15 +1,14 @@
 import type React from "react"
-import { twMerge } from "tailwind-merge"
-import { tailwindUtils } from "@/utils/collections/tailwind-utils"
+import { twCn } from "@/utils/styles"
 
 const butonStyles = {
-    default: tailwindUtils.className(
+    default: twCn(
         "transform ring-offset-background duration-300 transition-all rounded-md px-6 py-3 font-semibold text-sm text-white",
     ),
-    primary: tailwindUtils.className(
+    primary: twCn(
         "shadow-indigo-500/20 shadow-lg hover:scale-105 hover:bg-indigo-500/90 bg-linear-to-r from-indigo-500 to-indigo-600",
     ),
-    disabled: tailwindUtils.className("pointer-events-none opacity-50"),
+    disabled: twCn("pointer-events-none opacity-50"),
 }
 
 interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, "type"> {
@@ -25,7 +24,7 @@ export function Button({
     return (
         <button
             type="button"
-            className={twMerge(
+            className={twCn(
                 butonStyles.default,
                 butonStyles[variant],
                 props.disabled && butonStyles.disabled,

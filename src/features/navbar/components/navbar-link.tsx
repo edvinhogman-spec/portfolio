@@ -12,6 +12,9 @@ interface NavbarLinkProps {
 // undvik att gap skapar mellanrum
 // animera
 
+// få bort mellanrum till vänster (ser fult ut när mellanrummen är olika)
+// asså det längst till vänster inte bara per
+
 export function NavbarLink({ label, icon, path, selected }: NavbarLinkProps) {
     return (
         <Link href={path}>
