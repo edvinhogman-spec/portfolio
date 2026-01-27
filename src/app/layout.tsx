@@ -1,11 +1,12 @@
 import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.css"
+import { Navbar } from "@/features/navbar/components"
 
-
-const montserrat = Montserrat({
-    variable: "--font-montserrat",
+const inter = Inter({
     subsets: ["latin"],
+    weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+    variable: "--font-inter",
 })
 
 export const metadata: Metadata = {
@@ -20,8 +21,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${montserrat.variable} antialiased`}>
-                {children}
+            <body className={`${inter.variable} antialiased`}>
+                <div className="flex min-h-screen w-full flex-col">
+                    <Navbar />
+                    <main className="relative">{children}</main>
+                </div>
             </body>
         </html>
     )
