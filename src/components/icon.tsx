@@ -1,5 +1,3 @@
-import { twMerge } from "tailwind-merge"
-
 export type IconVariant = keyof typeof styles.variants
 
 interface IconProps {
@@ -27,7 +25,7 @@ export function Icon({ className, variant, alt }: IconProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox={styles.core.viewbox}
             fill="#ffffff"
-            className={twMerge("fill-current", className)}
+            className={className}
         >
             <path d={styles.variants[variant]} />
             <title>{alt ?? variant}</title>
