@@ -1,12 +1,12 @@
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { DM_Sans } from "next/font/google"
 import "./globals.css"
 import { Navbar } from "@/features/navbar/components"
 
-const inter = Inter({
+const sans = DM_Sans({
     subsets: ["latin"],
     weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-    variable: "--font-inter",
+    variable: "--font-sans",
 })
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${inter.variable} antialiased`}>
+            <body className={`${sans.variable} antialiased`}>
                 <div className="flex min-h-screen w-full flex-col">
                     <Navbar />
                     <main className="relative">{children}</main>

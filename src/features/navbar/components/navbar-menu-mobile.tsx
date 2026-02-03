@@ -30,7 +30,7 @@ export function NavbarMenuMobile() {
                 {/* Sidebar */}
                 <div
                     className={twCn(
-                        "fixed top-0 left-0 z-40 h-screen w-70 border-white/5 border-r bg-background p-6",
+                        "fixed top-0 left-0 z-40 h-screen w-70 border-background-offset border-r bg-background p-6",
                         "-translate-x-full transition-transform duration-300 group-data-[state=open]:translate-x-0",
                     )}
                 >

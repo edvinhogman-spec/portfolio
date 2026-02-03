@@ -7,14 +7,17 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     variant?: ButtonVariant
 }
 
-// biome-ignore format: dont want it spanning multiple lines
 const styles = {
     core: {
-        base: twCn("cursor-pointer rounded-md px-3 py-2 transition-all duration-200"),
+        base: twCn(
+            "text-foreground-subheading",
+            "cursor-pointer rounded-md px-3 py-2",
+            "transition-all duration-200",
+        ),
     },
     variants: {
         primary: twCn(),
-        tertiary: twCn("hover:bg-zinc-800"),
+        tertiary: twCn("hover:bg-background-surface"),
     },
 }
 

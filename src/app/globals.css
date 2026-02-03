@@ -1,18 +1,26 @@
 @import "tailwindcss";
 
-:root {
-    --background: #09090b;
-    --foreground: #ffffff;
-}
-
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --font-inter: var(--font-inter);
+    --color-background: var(--color-zinc-950);
+    --color-background-offset: var(--color-zinc-900);
+    --color-background-surface: var(--color-zinc-800);
+
+    --color-foreground-heading: var(--color-zinc-50);
+    --color-foreground-subheading: var(--color-zinc-100);
+    --color-foreground-body: var(--color-zinc-300);
+    --color-foreground-muted: var(--color-zinc-400);
+
+    --color-chart-1: var(--color-blue-700);
+    --color-chart-2: var(--color-emerald-500);
+    --color-chart-3: var(--color-orange-400);
+    --color-chart-4: var(--color-purple-500);
+    --color-chart-5: var(--color-rose-500);
+
+    --font-sans: var(--font-sans);
 }
 
 body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+    background: var(--color-background);
+    color: var(--color-foreground-body);
+    font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }

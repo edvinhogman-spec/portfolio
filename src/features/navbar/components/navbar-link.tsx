@@ -26,15 +26,17 @@ export function NavbarLink({ variant, label, icon, path }: NavbarLinkProps) {
                 variant="tertiary"
                 className={twCn(
                     "flex w-full items-center space-x-2",
-                    selected && "bg-zinc-800",
+                    selected && "bg-background-surface",
                 )}
             >
                 <Icon variant={icon} className="size-5 shrink-0" />
-                <span className="font-medium text-sm">{label}</span>
+                <span className="font-medium text-current text-sm leading-tight">
+                    {label}
+                </span>
             </Button>
 
             {highlighted && (
-                <div className="-bottom-3.5 absolute h-0.5 w-full bg-foreground" />
+                <div className="absolute -bottom-3.5 h-0.5 w-full bg-foreground-subheading" />
             )}
         </Link>
     )
