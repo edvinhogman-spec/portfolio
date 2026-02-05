@@ -4,9 +4,9 @@ export default function Page() {
     const entries = ["hej", "Hejsan!", "heeej??", "hej!"]
 
     return (
-        <div className="grid w-full grid-cols-1 gap-3 p-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-1 gap-3 p-3 sm:grid-cols-2 lg:grid-cols-3">
             {entries.map((value) => (
-                <div key={value} className="h-110 w-full">
+                <div key={value} className="h-110">
                     <PortfolioCard
                         name="Lorem ipsum dolor sit atem"
                         description="Lorem ipsum dolor sit amet consectetur adipiscing elit."

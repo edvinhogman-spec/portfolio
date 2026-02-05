@@ -1,5 +1,6 @@
 export interface PortfolioCardStruct {
-    thumbnailURL: string
-    linkURL: string
     title: string
+    description: string
+    thumbnailURL: string
+    tags: string[]
 }

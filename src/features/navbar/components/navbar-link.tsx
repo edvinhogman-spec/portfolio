@@ -36,7 +36,7 @@ export function NavbarLink({ variant, label, icon, path }: NavbarLinkProps) {
             </Button>
 
             {highlighted && (
-                <div className="absolute -bottom-3.5 h-0.5 w-full" />
+                <div className="absolute -bottom-3.5 h-0.5 w-full bg-foreground" />
             )}
         </Link>
     )

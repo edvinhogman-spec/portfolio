@@ -17,10 +17,10 @@ export function PortfolioCard({
     return (
         <div
             className={twCn(
-                "group relative",
+                "relative",
                 "flex size-full flex-col space-y-3 rounded-xl p-6",
                 "border-2 border-card bg-card text-card-foreground",
-                "transition-all duration-400 group-hover:border-border",
+                "transition-all duration-400 hover:border-border",
             )}
         >
             <div className="relative shrink-0 overflow-hidden">
