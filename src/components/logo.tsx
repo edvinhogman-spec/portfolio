@@ -5,11 +5,11 @@ export function Logo() {
         <a href="/">
             <div className="flex items-center space-x-2 text-foreground">
                 <div className="flex aspect-square size-8 items-center justify-center">
-                    <Icon variant="egg" className="fill-foreground-heading" />
+                    <Icon variant="egg" />
                 </div>
 
                 <div className="flex flex-1 text-left text-sm">
-                    <span className="truncate font-bold text-foreground-heading leading-tight">
+                    <span className="truncate font-bold leading-tight">
                         Edvin Högman
                     </span>
                 </div>

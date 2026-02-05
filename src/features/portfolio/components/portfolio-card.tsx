@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { twCn } from "@/utils/styles"
 
 interface PortfolioCardProps {
     name: string
@@ -15,12 +16,18 @@ export function PortfolioCard({
 }: PortfolioCardProps) {
     return (
         <div className="group relative h-100 w-120">
-            <div className="flex size-full flex-col space-y-3 rounded-xl bg-background-offset p-6">
+            <div
+                className={twCn(
+                    "flex size-full flex-col space-y-3 rounded-xl p-6",
+                    "border-2 border-card bg-card text-card-foreground",
+                    "transition-all duration-400 group-hover:border-border",
+                )}
+            >
                 <div className="flex gap-1.5">
                     {tags.map((tag) => (
                         <div
                             key={tag}
-                            className="rounded-md bg-background-surface px-2 py-1 text-foreground-muted text-xs"
+                            className="shrink-0 rounded-md bg-muted px-2 py-1 text-muted-foreground text-xs"
                         >
                             {tag}
                         </div>
@@ -28,10 +35,10 @@ export function PortfolioCard({
                 </div>
 
                 <div className="flex flex-col space-y-1.5">
-                    <div className="font-semibold text-foreground-heading text-lg leading-none">
+                    <div className="shrink-0 font-semibold text-lg leading-none">
                         {name}
                     </div>
-                    <div className="text-foreground-muted text-sm leading-snug">
+                    <div className="shrink-0 text-muted-foreground text-sm leading-snug">
                         {description}
                     </div>
                 </div>

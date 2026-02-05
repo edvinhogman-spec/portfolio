@@ -7,7 +7,7 @@ export default function Page() {
                 name=" Lorem ipsum dolor sit atem"
                 description="Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque."
                 thumbnailURL="https://i.imgur.com/3tac4zL.jpeg"
-                tags={["TypeScript", "SQL"]}
+                tags={["TypeScript", "React"]}
             />
         </div>
     )

@@ -27,7 +27,7 @@ export function Icon({ className, variant, alt }: IconProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox={styles.core.viewbox}
             fill="#ffffff"
-            className={twCn("fill-current", className)}
+            className={twCn("stroke-current", className)}
         >
             <path d={styles.variants[variant]} />
             <title>{alt ?? variant}</title>
