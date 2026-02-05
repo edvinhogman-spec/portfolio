@@ -13,9 +13,9 @@
     --color-accent: var(--color-zinc-800);
     --color-accent-foreground: var(--color-zinc-50);
 
-    --color-border: color-mix(in srgb, var(--color-white), transparent 90%);
-    --color-input: color-mix(in srgb, var(--color-white), transparent 85%);
-    --color-white: var(--color-zinc-500);
+    --color-border: color-mix(in srgb, var(--color-white), transparent 10%);
+    --color-input: color-mix(in srgb, var(--color-white), transparent 15%);
+    --color-ring: var(--color-zinc-500);
 
     --color-chart-1: var(--color-blue-700);
     --color-chart-2: var(--color-emerald-500);
