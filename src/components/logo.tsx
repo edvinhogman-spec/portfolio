@@ -4,7 +4,7 @@ export function Logo() {
     return (
         <a href="/">
             <div className="flex items-center space-x-2 text-foreground">
-                <div className="flex aspect-square size-8 items-center justify-center">
+                <div className="flex aspect-square size-8 shrink-0 items-center justify-center">
                     <Icon variant="egg" />
                 </div>
 
