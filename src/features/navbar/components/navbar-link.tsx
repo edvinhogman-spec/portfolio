@@ -21,23 +21,24 @@ export function NavbarLink({ variant, label, icon, path }: NavbarLinkProps) {
     const highlighted = selected && variant === "desktop"
 
     return (
-        <Link href={path} className="relative">
-            <Button
-                variant="tertiary"
-                className={twCn(
-                    "flex w-full items-center space-x-2",
-                    selected && "bg-secondary",
-                )}
-            >
-                <Icon variant={icon} className="size-5 shrink-0" />
-                <span className="font-medium text-sm leading-tight">
-                    {label}
-                </span>
-            </Button>
+        <div className="relative flex h-full items-center">
+            <Link href={path}>
+                <Button
+                    variant="tertiary"
+                    className={twCn(selected && "bg-secondary")}
+                >
+                    <div className="flex w-full items-center space-x-2">
+                        <Icon variant={icon} className="size-5 shrink-0" />
+                        <span className="font-medium text-sm leading-tight">
+                            {label}
+                        </span>
+                    </div>
+                </Button>
 
-            {highlighted && (
-                <div className="absolute -bottom-3.5 h-0.5 w-full bg-foreground" />
-            )}
-        </Link>
+                {highlighted && (
+                    <div className="absolute bottom-0 h-0.5 w-full translate-y-px bg-foreground" />
+                )}
+            </Link>
+        </div>
     )
 }
