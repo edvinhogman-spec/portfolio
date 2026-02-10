@@ -21,12 +21,10 @@ export function NavbarLink({ variant, label, icon, path }: NavbarLinkProps) {
     const highlighted = selected && variant === "desktop"
 
     return (
-        <div className="relative flex h-full w-full items-center">
-            {/* 2. Added className="w-full" to the Link so the <a> tag stretches */}
+        <div className="relative flex size-full items-center">
             <Link href={path} className="w-full">
                 <Button
                     variant="tertiary"
-                    /* 3. Button now has a parent with width to reference */
                     className={twCn(
                         "w-full justify-start",
                         selected && "bg-secondary",
