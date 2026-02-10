@@ -4,7 +4,7 @@ export default function Page() {
     const entries = ["hej", "Hejsan!", "heeej??", "hej!"]
 
     return (
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(20rem,1fr))] gap-3 p-3">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(min(100%,20rem),1fr))] gap-3 p-3">
             {entries.map((value) => (
                 <div key={value} className="h-110">
                     <PortfolioCard
