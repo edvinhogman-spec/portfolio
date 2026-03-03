@@ -1,1 +1,1 @@
-export * from "./read-public-file-json"
+export * from "./base64"

@@ -1,17 +1,26 @@
 [
     {
+        "title": "Lorem ipsum dolor sit",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
         "thumbnailURL": "https://i.imgur.com/VZDCsXt.jpeg",
-        "linkURL": "",
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "tags": ["TypeScript", "React"]
     },
     {
+        "title": "Lorem ipsum dolor sit amet",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
         "thumbnailURL": "https://i.imgur.com/VZDCsXt.jpeg",
-        "linkURL": "",
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "tags": ["TypeScript", "React"]
     },
     {
+        "title": "Lorem ipsum dolor sit amet amet",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
         "thumbnailURL": "https://i.imgur.com/VZDCsXt.jpeg",
-        "linkURL": "",
-        "title": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        "tags": ["TypeScript", "React"]
+    },
+    {
+        "title": "Lorem ipsum dolor sit sit",
+        "description": "Lorem ipsum dolor sit amet consectetur adipiscing elit. Sit amet consectetur adipiscing elit quisque faucibus ex. Adipiscing elit quisque faucibus ex sapien vitae pellentesque.",
+        "thumbnailURL": "https://i.imgur.com/VZDCsXt.jpeg",
+        "tags": ["TypeScript", "React"]
     }
 ]

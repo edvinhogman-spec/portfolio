@@ -17,7 +17,7 @@ interface NavbarLinkProps {
 export function NavbarLink({ variant, label, icon, path }: NavbarLinkProps) {
     const pathname = usePathname()
 
-    const selected = pathname === path
+    const selected = pathname.startsWith(path)
     const highlighted = selected && variant === "desktop"
 
     return (

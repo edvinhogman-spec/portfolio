@@ -18,6 +18,7 @@ const styles = {
         primary: twCn(""),
         secondary: twCn("bg-secondary text-secondary-foreground"),
         tertiary: twCn("hover:bg-secondary text-secondary-foreground"),
+        muted: twCn("bg-muted text-muted-foreground"),
     },
 }
 
