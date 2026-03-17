@@ -1,6 +1,3 @@
-export interface PortfolioCardStruct {
-    title: string
-    description: string
-    thumbnailURL: string
-    tags: string[]
-}
+import type portfolio from "@/../public/portfolio.json"
+
+export type PortfolioItemStruct = (typeof portfolio)[0]
