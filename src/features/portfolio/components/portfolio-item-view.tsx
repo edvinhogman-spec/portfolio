@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { twMerge } from "tailwind-merge"
 import { Button } from "@/components"
 import { InspectableImage } from "@/components/inspectable-image"
@@ -25,7 +24,7 @@ export function PortfolioItemView({ item }: { item: PortfolioItemStruct }) {
                 </div>
             </div>
 
-            <div className="border-border" />
+            <hr className="border-border" />
 
             <div>
                 <p className="text-lg text-muted-foreground leading-relaxed">
@@ -33,18 +32,17 @@ export function PortfolioItemView({ item }: { item: PortfolioItemStruct }) {
                 </p>
             </div>
 
-            <div className="border-border" />
+            <hr className="border-border" />
 
             <div className="relative aspect-square max-h-90 overflow-hidden rounded-xl">
-                <Image
-                    className="object-cover"
+                <InspectableImage
                     alt={item.title}
                     src={item.thumbnailURL}
                     fill
                 />
             </div>
 
-            <div className="border-border" />
+            <hr className="border-border" />
 
             <div
                 className={twMerge(
