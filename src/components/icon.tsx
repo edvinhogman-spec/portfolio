@@ -1,4 +1,4 @@
-import { twCn } from "@/utils/styles"
+import { twMerge } from "tailwind-merge"
 
 export type IconVariant = keyof typeof styles.variants
 
@@ -27,7 +27,7 @@ export function Icon({ className, variant, alt }: IconProps) {
             xmlns="http://www.w3.org/2000/svg"
             viewBox={styles.core.viewbox}
             fill="#ffffff"
-            className={twCn("stroke-current", className)}
+            className={twMerge("stroke-current", className)}
         >
             <path d={styles.variants[variant]} />
             <title>{alt ?? variant}</title>

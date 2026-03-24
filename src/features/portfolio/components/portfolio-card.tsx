@@ -1,7 +1,8 @@
 import Image from "next/image"
 import Link from "next/link"
+import { twMerge } from "tailwind-merge"
 import { Button } from "@/components"
-import { twCn } from "@/utils/styles"
+
 import { encodeB64 } from "@/utils/web/base64"
 
 interface PortfolioCardProps {
@@ -20,7 +21,7 @@ export function PortfolioCard({
     return (
         <Link href={`/portfolio/${encodeB64(title)}`}>
             <div
-                className={twCn(
+                className={twMerge(
                     "group relative",
                     "flex size-full flex-col space-y-3 rounded-xl p-6",
                     "border-2 border-card bg-card text-card-foreground",
@@ -53,7 +54,7 @@ export function PortfolioCard({
 
                 <div className="relative size-full flex-1 overflow-hidden rounded-xl">
                     <Image
-                        className={twCn(
+                        className={twMerge(
                             "bg-background object-cover will-change-transform",
                             "transition-all duration-400 group-hover:scale-105",
                         )}

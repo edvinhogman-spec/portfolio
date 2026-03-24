@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { PortfolioItem } from "@/features/portfolio/components"
+import { PortfolioItemView } from "@/features/portfolio/components"
 import { getPortfolioItem } from "@/features/portfolio/utils"
 import { decodeB64 } from "@/utils/web"
 
@@ -15,5 +15,5 @@ export default async function Page({
         notFound()
     }
 
-    return <PortfolioItem item={item} />
+    return <PortfolioItemView item={item} />
 }

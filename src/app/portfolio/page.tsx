@@ -1,13 +1,13 @@
+import { twMerge } from "tailwind-merge"
 import { PortfolioCard } from "@/features/portfolio/components"
 import { getPortfolioManyItems } from "@/features/portfolio/utils"
-import { twCn } from "@/utils/styles"
 
 export default async function Page() {
     const portfolio = getPortfolioManyItems()
 
     return (
         <div
-            className={twCn(
+            className={twMerge(
                 "gap-3 p-3 pt-0",
                 "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
             )}

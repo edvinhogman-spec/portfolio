@@ -1,5 +1,5 @@
 import type React from "react"
-import { twCn } from "@/utils/styles"
+import { twMerge } from "tailwind-merge"
 
 export type ButtonVariant = keyof typeof styles.variants
 
@@ -9,16 +9,18 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const styles = {
     core: {
-        base: twCn(
+        base: twMerge(
             "cursor-pointer rounded-md px-3 py-2",
             "transition-all duration-200",
         ),
     },
     variants: {
-        primary: twCn(""),
-        secondary: twCn("bg-secondary text-secondary-foreground"),
-        tertiary: twCn("hover:bg-secondary text-secondary-foreground"),
-        muted: twCn("bg-muted text-muted-foreground"),
+        primary: twMerge(""),
+        secondary: twMerge(
+            "bg-secondary text-secondary-foreground hover:brightness-125",
+        ),
+        tertiary: twMerge("hover:bg-secondary text-secondary-foreground"),
+        muted: twMerge("bg-muted text-muted-foreground"),
     },
 }
 
@@ -31,7 +33,7 @@ export function Button({
     return (
         <button
             type="button"
-            className={twCn(
+            className={twMerge(
                 styles.core.base,
                 styles.variants[variant],
                 className,

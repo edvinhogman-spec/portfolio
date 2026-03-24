@@ -1,8 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import { twMerge } from "tailwind-merge"
 import { Button, Icon, Logo } from "@/components"
-import { twCn } from "@/utils/styles"
+
 import { NAV_LINKS } from "../constants"
 import { NavbarLink } from "./navbar-link"
 
@@ -20,15 +21,15 @@ export function NavbarMenuMobile() {
 
             {/* Backdrop */}
             <div
-                className={twCn(
-                    "pointer-events-none fixed inset-0 z-30 bg-black/60 backdrop-blur-md",
+                className={twMerge(
+                    "pointer-events-none fixed inset-0 z-30 bg-overlay backdrop-blur-md",
                     "opacity-0 transition-opacity duration-300 group-data-[state=open]:opacity-100",
                 )}
             />
 
             {/* Sidebar */}
             <div
-                className={twCn(
+                className={twMerge(
                     "fixed top-0 left-0 z-40 h-screen w-70 border-border border-r bg-background p-6",
                     "-translate-x-full transition-transform duration-300 group-data-[state=open]:translate-x-0",
                 )}

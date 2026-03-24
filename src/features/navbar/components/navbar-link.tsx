@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { twMerge } from "tailwind-merge"
 import { Button, Icon, type IconVariant } from "@/components"
-import { twCn } from "@/utils/styles"
 
 type NavbarLinkVariant = "mobile" | "desktop"
 
@@ -25,7 +25,7 @@ export function NavbarLink({ variant, label, icon, path }: NavbarLinkProps) {
             <Link href={path} className="w-full">
                 <Button
                     variant="tertiary"
-                    className={twCn(
+                    className={twMerge(
                         "w-full justify-start",
                         selected && "bg-secondary",
                     )}
