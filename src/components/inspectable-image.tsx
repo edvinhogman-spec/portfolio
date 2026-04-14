@@ -15,47 +15,53 @@ export function InspectableImage({
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <button
-            className="group absolute inset-0 size-full cursor-pointer"
-            type="button"
-            onClick={() => setIsOpen(!isOpen)}
-        >
-            <Image
-                className={twMerge(
-                    "object-cover transition-all duration-400 group-hover:scale-105",
-                    className,
-                )}
-                {...props}
-            />
+        <>
+            <button
+                type="button"
+                className="group absolute inset-0 size-full cursor-pointer"
+                onClick={() => setIsOpen(!isOpen)}
+            >
+                <Image
+                    className={twMerge(
+                        "object-cover transition-all duration-400 group-hover:scale-105",
+                        className,
+                    )}
+                    {...props}
+                />
+            </button>
 
             {isOpen &&
                 createPortal(
-                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-overlay backdrop-blur-md">
-                        <div className="relative aspect-square w-lg rounded-2xl border border-border bg-card p-6">
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                        <button
+                            type="button"
+                            className="absolute inset-0 bg-overlay backdrop-blur-md"
+                            onClick={() => setIsOpen(false)}
+                        />
+
+                        <div className="relative w-full max-w-lg space-y-2">
                             <Button
-                                variant="secondary"
-                                className={twMerge(
-                                    "absolute top-0 -right-12 z-10",
-                                    "border border-border bg-card font-bold",
-                                )}
+                                variant="card"
+                                className="w-full"
                                 onClick={() => setIsOpen(false)}
                             >
-                                X
+                                Close
                             </Button>
 
-                            <div className="relative size-full overflow-hidden rounded-2xl bg-background">
-                                <Image
-                                    className={twMerge(
-                                        "object-contain",
-                                        className,
-                                    )}
-                                    {...props}
-                                />
+                            <div className="relative overflow-hidden rounded-md border border-border bg-card p-6">
+                                <div className="relative aspect-square bg-background">
+                                    <Image
+                                        fill
+                                        alt={props.alt}
+                                        src={props.src}
+                                        className="object-contain"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>,
                     document.body,
                 )}
-        </button>
+        </>
     )
 }

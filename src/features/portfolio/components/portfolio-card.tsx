@@ -2,24 +2,15 @@ import Image from "next/image"
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
 import { Button } from "@/components"
-
-import { encodeB64 } from "@/utils/web/base64"
+import type { PortfolioItemMetadata } from "../types"
 
 interface PortfolioCardProps {
-    title: string
-    description: string
-    thumbnailURL: string
-    tags: string[]
+    item: PortfolioItemMetadata
 }
 
-export function PortfolioCard({
-    title,
-    description,
-    thumbnailURL,
-    tags,
-}: PortfolioCardProps) {
+export function PortfolioCard({ item }: PortfolioCardProps) {
     return (
-        <Link href={`/portfolio/${encodeB64(title)}`}>
+        <Link href={`/portfolio/${item.slug}`}>
             <div
                 className={twMerge(
                     "group relative",
@@ -30,7 +21,7 @@ export function PortfolioCard({
             >
                 <div className="relative shrink-0 overflow-hidden">
                     <div className="flex gap-1.5">
-                        {tags.map((tag) => (
+                        {item.tags.map((tag) => (
                             <Button
                                 key={tag}
                                 variant="muted"
@@ -45,10 +36,10 @@ export function PortfolioCard({
 
                 <div className="mb-4 flex shrink-0 flex-col space-y-1.5">
                     <div className="truncate font-semibold text-lg leading-none">
-                        {title}
+                        {item.name}
                     </div>
                     <div className="line-clamp-3 h-[3lh] text-muted-foreground text-sm">
-                        {description}
+                        {item.description}
                     </div>
                 </div>
 
@@ -59,7 +50,7 @@ export function PortfolioCard({
                             "transition-all duration-400 group-hover:scale-105",
                         )}
                         alt="Thumbnail"
-                        src={thumbnailURL}
+                        src={item.thumbnailPath}
                         fill
                     />
                 </div>

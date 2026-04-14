@@ -1,9 +1,7 @@
-import "server-only"
+import { portfolio } from "../data"
 
-import portfolio from "@/../public/portfolio.json"
-
-export function getPortfolioItem(name: string) {
-    return portfolio.find((v) => v.title === name)
+export function getPortfolioItem(slug: string) {
+    return portfolio.find((v) => v.slug === slug)
 }
 
 export function getPortfolioManyItems({ page = 0, limit = 9 } = {}) {

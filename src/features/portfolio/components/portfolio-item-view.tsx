@@ -1,15 +1,18 @@
 import { twMerge } from "tailwind-merge"
 import { Button } from "@/components"
 import { InspectableImage } from "@/components/inspectable-image"
+import type { PortfolioItemMetadata } from "../types"
 
-import type { PortfolioItemStruct } from "../types"
+interface PortflioItemViewProps {
+    item: PortfolioItemMetadata
+}
 
-export function PortfolioItemView({ item }: { item: PortfolioItemStruct }) {
+export function PortfolioItemView({ item }: PortflioItemViewProps) {
     return (
         <div className="mx-auto flex max-w-4xl flex-col gap-12 px-4 pb-10">
             <div className="flex flex-col items-center gap-6 text-center">
                 <h2 className="font-bold text-4xl tracking-tight sm:text-5xl">
-                    {item.title}
+                    {item.name}
                 </h2>
                 <div className="flex flex-wrap justify-center gap-2">
                     {item.tags.map((tag) => (
@@ -36,8 +39,8 @@ export function PortfolioItemView({ item }: { item: PortfolioItemStruct }) {
 
             <div className="relative aspect-square max-h-90 overflow-hidden rounded-xl">
                 <InspectableImage
-                    alt={item.title}
-                    src={item.thumbnailURL}
+                    alt={item.name}
+                    src={item.thumbnailPath}
                     fill
                 />
             </div>
@@ -50,14 +53,14 @@ export function PortfolioItemView({ item }: { item: PortfolioItemStruct }) {
                     "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4",
                 )}
             >
-                {item.media.map(({ src, label }) => (
-                    <div key={src} className="flex flex-col gap-3">
+                {item.assets.map(({ path, name }) => (
+                    <div key={path} className="flex flex-col gap-3">
                         <div className="relative aspect-4/3 overflow-hidden rounded-xl">
-                            <InspectableImage alt={label} src={src} fill />
+                            <InspectableImage alt={name} src={path} fill />
                         </div>
 
                         <div className="text-center text-muted-foreground">
-                            {label}
+                            {name}
                         </div>
                     </div>
                 ))}

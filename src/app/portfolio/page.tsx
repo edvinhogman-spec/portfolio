@@ -12,14 +12,9 @@ export default async function Page() {
                 "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
             )}
         >
-            {portfolio.map((card) => (
-                <div key={card.title} className="h-110">
-                    <PortfolioCard
-                        title={card.title}
-                        description={card.description}
-                        thumbnailURL={card.thumbnailURL}
-                        tags={card.tags}
-                    />
+            {portfolio.map((item) => (
+                <div key={item.slug} className="h-110">
+                    <PortfolioCard item={item} />
                 </div>
             ))}
         </div>

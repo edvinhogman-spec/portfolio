@@ -21,6 +21,9 @@ const styles = {
         ),
         tertiary: twMerge("hover:bg-secondary text-secondary-foreground"),
         muted: twMerge("bg-muted text-muted-foreground"),
+        card: twMerge(
+            "border border-border bg-card hover:bg-secondary text-card-foreground",
+        ),
     },
 }
 
