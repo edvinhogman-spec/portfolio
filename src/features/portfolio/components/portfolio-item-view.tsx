@@ -1,10 +1,10 @@
 import { twMerge } from "tailwind-merge"
-import { Button } from "@/components"
-import { InspectableImage } from "@/components/inspectable-image"
-import type { PortfolioItemMetadata } from "../types"
+import { InspectableImage } from "@/components"
+import type { PortfolioItem } from "../types"
+import { PortfolioTag } from "./portfolio-tag"
 
 interface PortflioItemViewProps {
-    item: PortfolioItemMetadata
+    item: PortfolioItem
 }
 
 export function PortfolioItemView({ item }: PortflioItemViewProps) {
@@ -16,13 +16,7 @@ export function PortfolioItemView({ item }: PortflioItemViewProps) {
                 </h2>
                 <div className="flex flex-wrap justify-center gap-2">
                     {item.tags.map((tag) => (
-                        <Button
-                            key={tag}
-                            variant="muted"
-                            className="whitespace-nowrap px-2 py-1 text-xs"
-                        >
-                            {tag}
-                        </Button>
+                        <PortfolioTag key={tag} tag={tag} />
                     ))}
                 </div>
             </div>

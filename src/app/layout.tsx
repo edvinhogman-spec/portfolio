@@ -24,7 +24,7 @@ export default function RootLayout({
             <body className={`${sans.variable} antialiased`}>
                 <Navbar />
 
-                <div className="flex min-h-screen w-full flex-col">
+                <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col">
                     <main className="relative">{children}</main>
                 </div>
             </body>

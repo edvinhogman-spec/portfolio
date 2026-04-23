@@ -8,6 +8,11 @@ import { Button } from "./button"
 
 type InspectableImageProps = Omit<ImageProps, "children">
 
+// TODO:
+// Om jag känner för det:
+// Fixa att den skalar om rätt när fönsterstorleken är väldigt liten på höjden
+// Denna bug finns även i mobilnavbar:en
+
 export function InspectableImage({
     className,
     ...props
@@ -39,17 +44,9 @@ export function InspectableImage({
                             onClick={() => setIsOpen(false)}
                         />
 
-                        <div className="relative w-full max-w-lg space-y-2">
-                            <Button
-                                variant="card"
-                                className="w-full"
-                                onClick={() => setIsOpen(false)}
-                            >
-                                Close
-                            </Button>
-
-                            <div className="relative overflow-hidden rounded-md border border-border bg-card p-6">
-                                <div className="relative aspect-square bg-background">
+                        <div className="relative flex aspect-square w-full max-w-lg flex-col space-y-1 lg:aspect-video lg:max-w-4xl">
+                            <div className="relative flex-1 overflow-hidden rounded-md border border-border bg-card p-6">
+                                <div className="relative size-full overflow-hidden rounded-md bg-background">
                                     <Image
                                         fill
                                         alt={props.alt}
@@ -57,6 +54,24 @@ export function InspectableImage({
                                         className="object-contain"
                                     />
                                 </div>
+                            </div>
+
+                            <div className="flex shrink-0 space-x-1">
+                                <Button
+                                    variant="card"
+                                    className="w-full"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    {props.alt}
+                                </Button>
+
+                                <Button
+                                    variant="card"
+                                    className="flex-1 px-6"
+                                    onClick={() => setIsOpen(false)}
+                                >
+                                    X
+                                </Button>
                             </div>
                         </div>
                     </div>,

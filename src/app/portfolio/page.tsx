@@ -1,22 +1,31 @@
-import { twMerge } from "tailwind-merge"
 import { PortfolioCard } from "@/features/portfolio/components"
+import { PortfolioFilterBar } from "@/features/portfolio/components/portfolio-filter-bar"
+import { portfolio } from "@/features/portfolio/data"
 import { getPortfolioManyItems } from "@/features/portfolio/utils"
 
-export default async function Page() {
-    const portfolio = getPortfolioManyItems()
+interface PageProps {
+    searchParams?: Promise<{ filter?: string }>
+}
+
+export default async function Page(props: PageProps) {
+    const searchParams = await props.searchParams
+    const tags = searchParams?.filter?.split(",")
+
+    const items = getPortfolioManyItems({
+        filter: { tags },
+    })
 
     return (
-        <div
-            className={twMerge(
-                "gap-3 p-3 pt-0",
-                "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3",
-            )}
-        >
-            {portfolio.map((item) => (
-                <div key={item.slug} className="h-110">
-                    <PortfolioCard item={item} />
-                </div>
-            ))}
+        <div className="space-y-3 p-3 pt-0">
+            <PortfolioFilterBar tags={portfolio.tags} />
+
+            <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
+                {items.map((item) => (
+                    <div key={item.slug} className="h-110">
+                        <PortfolioCard item={item} />
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }

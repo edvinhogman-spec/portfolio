@@ -5,7 +5,7 @@ export type PortfolioItemDefinition = {
     tags: string[]
 }
 
-export type PortfolioItemMetadata = {
+export type PortfolioItem = {
     slug: string
     name: string
     description: string

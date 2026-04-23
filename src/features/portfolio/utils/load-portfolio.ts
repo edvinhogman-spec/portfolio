@@ -1,13 +1,13 @@
 import { readdirSync, readFileSync } from "node:fs"
 import { basename, extname, join } from "node:path"
-import { PORTFOLIO_ROOT_PATH } from "../constants/portfolio"
-import type { PortfolioItemDefinition, PortfolioItemMetadata } from "../types"
+import { PORTFOLIO_ROOT_PATH } from "../constants"
+import type { PortfolioItem, PortfolioItemDefinition } from "../types"
 
 function parsePortfolioEntry(dirpath: string) {
     const metaPath = join(dirpath, "meta.json")
     const assetsDir = join(dirpath, "assets")
     const slug = basename(dirpath)
-    const publicURL = `/static/portfolio/${slug}`
+    const publicURL = `/portfolio/${slug}`
 
     const definition = JSON.parse(
         readFileSync(metaPath, "utf-8"),
@@ -20,7 +20,7 @@ function parsePortfolioEntry(dirpath: string) {
         }))
         .filter((a) => !a.path.endsWith(definition.thumbnailPath))
 
-    const metadata: PortfolioItemMetadata = {
+    const item: PortfolioItem = {
         slug: slug,
         name: definition.name,
         description: definition.description,
@@ -29,13 +29,18 @@ function parsePortfolioEntry(dirpath: string) {
         assets: assets,
     }
 
-    return metadata
+    return item
 }
 
 export function loadPortfolio() {
     const folders = readdirSync(PORTFOLIO_ROOT_PATH)
-    return folders.map((dirname) => {
+
+    const items = folders.map((dirname) => {
         const dirpath = join(PORTFOLIO_ROOT_PATH, dirname)
         return parsePortfolioEntry(dirpath)
     })
+
+    const tags = [...new Set(items.flatMap((item) => item.tags))]
+
+    return { items, tags }
 }

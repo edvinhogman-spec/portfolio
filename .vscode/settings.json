@@ -3,5 +3,8 @@
     "editor.codeActionsOnSave": {
         "source.fixAll.biome": "explicit"
     },
-    "tailwindCSS.classFunctions": ["twMerge"]
+
+    "tailwindCSS.classFunctions": ["twMerge"],
+
+    "js/ts.tsdk.path": "node_modules\\typescript\\lib"
 }

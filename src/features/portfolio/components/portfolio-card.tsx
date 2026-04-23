@@ -1,11 +1,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import { twMerge } from "tailwind-merge"
-import { Button } from "@/components"
-import type { PortfolioItemMetadata } from "../types"
+import type { PortfolioItem } from "../types"
+import { PortfolioTag } from "./portfolio-tag"
 
 interface PortfolioCardProps {
-    item: PortfolioItemMetadata
+    item: PortfolioItem
 }
 
 export function PortfolioCard({ item }: PortfolioCardProps) {
@@ -22,13 +22,7 @@ export function PortfolioCard({ item }: PortfolioCardProps) {
                 <div className="relative shrink-0 overflow-hidden">
                     <div className="flex gap-1.5">
                         {item.tags.map((tag) => (
-                            <Button
-                                key={tag}
-                                variant="muted"
-                                className="whitespace-nowrap px-2 py-1 text-xs"
-                            >
-                                {tag}
-                            </Button>
+                            <PortfolioTag key={tag} tag={tag} />
                         ))}
                     </div>
                     <div className="absolute inset-y-0 right-0 w-12 bg-linear-to-r from-transparent to-card"></div>

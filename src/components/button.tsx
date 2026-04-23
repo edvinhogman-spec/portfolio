@@ -20,7 +20,7 @@ const styles = {
             "bg-secondary text-secondary-foreground hover:brightness-125",
         ),
         tertiary: twMerge("hover:bg-secondary text-secondary-foreground"),
-        muted: twMerge("bg-muted text-muted-foreground"),
+        muted: twMerge("bg-muted hover:brightness-125 text-muted-foreground"),
         card: twMerge(
             "border border-border bg-card hover:bg-secondary text-card-foreground",
         ),
