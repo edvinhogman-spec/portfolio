@@ -15,7 +15,7 @@ export function PortfolioCard({ item }: PortfolioCardProps) {
                 className={twMerge(
                     "group relative",
                     "flex size-full flex-col space-y-3 rounded-xl p-6",
-                    "border-2 border-card bg-card text-card-foreground",
+                    "border border-card bg-card text-card-foreground",
                     "transition-all duration-400 hover:border-border",
                 )}
             >

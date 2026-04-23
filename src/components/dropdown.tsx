@@ -104,15 +104,15 @@ export function Dropdown({
                 >
                     {suggestions.length ? (
                         suggestions.map((item) => (
-                            <button
+                            <Button
                                 key={item.value}
-                                type="button"
-                                className="rounded-lg px-3 py-2 text-left text-muted-foreground hover:bg-blue-700 hover:text-blue-200"
+                                variant="secondary"
+                                className="not-hover:bg-transparent text-left not-hover:text-muted-foreground"
                                 onMouseDown={(e) => e.preventDefault()}
                                 onClick={() => add(item)}
                             >
                                 {item.name}
-                            </button>
+                            </Button>
                         ))
                     ) : (
                         <div className="px-3 py-2 text-border">

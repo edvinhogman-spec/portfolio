@@ -6,6 +6,8 @@
 
     --color-card: var(--color-zinc-900);
     --color-card-foreground: var(--color-zinc-50);
+    --color-primary: var(--color-zinc-200);
+    --color-primary-foreground: var(--color-zinc-950);
     --color-secondary: var(--color-zinc-800);
     --color-secondary-foreground: var(--color-zinc-50);
     --color-muted: var(--color-zinc-800);

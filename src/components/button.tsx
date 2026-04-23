@@ -15,14 +15,18 @@ const styles = {
         ),
     },
     variants: {
-        primary: twMerge(""),
+        primary: twMerge(
+            "bg-primary hover:bg-secondary hover:text-secondary-foreground text-primary-foreground",
+        ),
         secondary: twMerge(
-            "bg-secondary text-secondary-foreground hover:brightness-125",
+            "bg-secondary text-secondary-foreground hover:bg-primary hover:text-primary-foreground",
         ),
         tertiary: twMerge("hover:bg-secondary text-secondary-foreground"),
-        muted: twMerge("bg-muted hover:brightness-125 text-muted-foreground"),
+        muted: twMerge(
+            "bg-muted hover:bg-accent hover:text-accent-foreground text-muted-foreground",
+        ),
         card: twMerge(
-            "border border-border bg-card hover:bg-secondary text-card-foreground",
+            "border border-border bg-card hover:bg-accent hover:text-accent-foreground text-card-foreground",
         ),
     },
 }
