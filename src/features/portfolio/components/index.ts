@@ -1,3 +1,3 @@
 export * from "./portfolio-card"
-export * from "./portfolio-item-view"
+export * from "./portfolio-filter-bar"
 export * from "./portfolio-tag"

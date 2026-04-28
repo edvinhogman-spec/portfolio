@@ -14,7 +14,7 @@ export function PortfolioCard({ item }: PortfolioCardProps) {
             <div
                 className={twMerge(
                     "group relative",
-                    "flex size-full flex-col space-y-3 rounded-xl p-6",
+                    "flex size-full flex-col space-y-3 rounded-lg p-6",
                     "border border-card bg-card text-card-foreground",
                     "transition-all duration-400 hover:border-border",
                 )}
@@ -37,7 +37,7 @@ export function PortfolioCard({ item }: PortfolioCardProps) {
                     </div>
                 </div>
 
-                <div className="relative size-full flex-1 overflow-hidden rounded-xl">
+                <div className="relative size-full flex-1 overflow-hidden rounded-lg">
                     <Image
                         className={twMerge(
                             "bg-background object-cover will-change-transform",

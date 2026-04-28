@@ -1,16 +1,10 @@
 import { portfolio } from "../data"
 
 interface PortfolioQuery {
-    page?: number
-    limit?: number
     filter?: { tags?: string[] }
 }
 
-export function getPortfolioManyItems({
-    page = 0,
-    limit = 8,
-    filter,
-}: PortfolioQuery = {}) {
+export function getPortfolioManyItems({ filter }: PortfolioQuery = {}) {
     const filtered = []
 
     for (const item of portfolio.items) {
@@ -22,9 +16,7 @@ export function getPortfolioManyItems({
         filtered.push(item)
     }
 
-    const start = page * limit
-    const items = filtered.slice(start, start + limit)
-    return items
+    return filtered
 }
 
 export function getPortfolioItem(slug: string) {

@@ -63,13 +63,13 @@ export function Dropdown({
         >
             <div
                 className={twMerge(
-                    "flex flex-wrap gap-1 rounded-lg border border-card bg-card p-2",
-                    "group-focus-within:rounded-b-none group-focus-within:border-border group-focus-within:bg-background",
+                    "flex flex-wrap gap-1 rounded-lg border border-card bg-card p-2 transition-colors duration-300",
+                    "not-focus-within:hover:border-border group-focus-within:rounded-b-none group-focus-within:border-border group-focus-within:bg-background",
                 )}
             >
                 <Icon
                     variant="arrow_drop_down"
-                    className="mr-1 text-input transition-all duration-200 group-focus-within:-rotate-180 group-focus-within:text-muted-foreground"
+                    className="mr-1 text-input transition-all duration-100 group-focus-within:-rotate-180 group-focus-within:text-muted-foreground"
                 />
 
                 {values.map((item) => (

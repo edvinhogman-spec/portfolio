@@ -56,23 +56,13 @@ export function InspectableImage({
                                 </div>
                             </div>
 
-                            <div className="flex shrink-0 space-x-1">
-                                <Button
-                                    variant="card"
-                                    className="w-full"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    {props.alt}
-                                </Button>
-
-                                <Button
-                                    variant="card"
-                                    className="flex-1 px-6"
-                                    onClick={() => setIsOpen(false)}
-                                >
-                                    X
-                                </Button>
-                            </div>
+                            <Button
+                                variant="card"
+                                className="w-full"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                {props.alt}
+                            </Button>
                         </div>
                     </div>,
                     document.body,

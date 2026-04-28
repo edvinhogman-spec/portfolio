@@ -1,14 +1,6 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-    images: {
-        remotePatterns: [
-            {
-                hostname: "i.imgur.com",
-            },
-        ],
-    },
-
     turbopack: {
         rules: {
             "*.svg": {
@@ -22,8 +14,8 @@ const nextConfig: NextConfig = {
         return [
             {
                 source: "/",
-                destination: "/portfolio",
-                permanent: true,
+                destination: "/about",
+                permanent: false,
             },
         ]
     },

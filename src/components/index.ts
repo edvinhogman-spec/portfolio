@@ -1,4 +1,5 @@
 export * from "./button"
+export * from "./carousel"
 export * from "./dropdown"
 export * from "./icon"
 export * from "./inspectable-image"

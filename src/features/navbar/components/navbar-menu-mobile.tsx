@@ -14,7 +14,7 @@ export function NavbarMenuMobile() {
     const menuState = isOpen ? "open" : "closed"
 
     return (
-        <div className="group -mr-1 lg:hidden" data-state={menuState}>
+        <div className="group -mr-3 lg:hidden" data-state={menuState}>
             <Button variant="tertiary" onClick={toggleMenu}>
                 <Icon variant="apps" className="size-6" />
             </Button>

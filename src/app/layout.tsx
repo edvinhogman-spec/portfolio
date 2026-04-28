@@ -21,11 +21,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={`${sans.variable} antialiased`}>
+            <body
+                className={`${sans.variable} flex h-screen flex-col antialiased`}
+            >
                 <Navbar />
-
-                <div className="mx-auto flex min-h-screen w-full max-w-5xl flex-col">
-                    <main className="relative">{children}</main>
+                <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col">
+                    <main className="relative flex flex-1 flex-col p-3 pt-0">
+                        {children}
+                    </main>
                 </div>
             </body>
         </html>

@@ -1,5 +1,5 @@
 export const NAV_LINKS = [
     { label: "Portfolio", icon: "layers", path: "/portfolio" },
+    { label: "About", icon: "info", path: "/about" },
     { label: "Career", icon: "school", path: "/career" },
-    { label: "About", icon: "person", path: "/about" },
 ] as const

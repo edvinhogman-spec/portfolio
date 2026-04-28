@@ -1,5 +1,7 @@
-import { PortfolioCard } from "@/features/portfolio/components"
-import { PortfolioFilterBar } from "@/features/portfolio/components/portfolio-filter-bar"
+import {
+    PortfolioCard,
+    PortfolioFilterBar,
+} from "@/features/portfolio/components"
 import { portfolio } from "@/features/portfolio/data"
 import { getPortfolioManyItems } from "@/features/portfolio/utils"
 
@@ -16,7 +18,7 @@ export default async function Page(props: PageProps) {
     })
 
     return (
-        <div className="space-y-3 p-3 pt-0">
+        <div className="space-y-3">
             <PortfolioFilterBar tags={portfolio.tags} />
 
             <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
