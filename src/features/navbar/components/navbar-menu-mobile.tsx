@@ -23,7 +23,7 @@ export function NavbarMenuMobile() {
             <div
                 className={twMerge(
                     "pointer-events-none fixed inset-0 z-30 bg-overlay backdrop-blur-md",
-                    "opacity-0 transition-opacity duration-300 group-data-[state=open]:opacity-100",
+                    "opacity-0 transition-opacity duration-300 group-data-[state=open]:pointer-events-auto group-data-[state=open]:opacity-100",
                 )}
             />
 

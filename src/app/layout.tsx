@@ -25,7 +25,7 @@ export default function RootLayout({
                 className={`${sans.variable} flex h-screen flex-col antialiased`}
             >
                 <Navbar />
-                <div className="mx-auto flex w-full max-w-5xl flex-1 flex-col">
+                <div className="mx-auto flex w-full max-w-6xl flex-1 flex-col">
                     <main className="relative flex flex-1 flex-col p-3 pt-0">
                         {children}
                     </main>

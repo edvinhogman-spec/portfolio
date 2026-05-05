@@ -5,7 +5,7 @@ import github from "@/public/svgs/github.svg"
 import info from "@/public/svgs/info.svg"
 import layers from "@/public/svgs/layers.svg"
 import luau from "@/public/svgs/luau.svg"
-import school from "@/public/svgs/school.svg"
+import python from "@/public/svgs/python.svg"
 import typescript from "@/public/svgs/typescript.svg"
 
 export const iconSvgs = {
@@ -16,6 +16,6 @@ export const iconSvgs = {
     info,
     layers,
     luau,
-    school,
+    python,
     typescript,
 }

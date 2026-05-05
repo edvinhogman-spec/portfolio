@@ -32,14 +32,14 @@ export default async function Page({
             <hr className="border-border" />
 
             <div>
-                <p className="text-lg text-muted-foreground leading-relaxed">
+                <p className="text-center text-lg text-muted-foreground leading-relaxed lg:text-left">
                     {item.description}
                 </p>
             </div>
 
             <hr className="border-border" />
 
-            <div className="relative aspect-square max-h-90 overflow-hidden rounded-xl">
+            <div className="relative aspect-square max-h-90 w-full overflow-hidden rounded-xl">
                 <InspectableImage
                     alt={item.name}
                     src={item.thumbnailPath}
